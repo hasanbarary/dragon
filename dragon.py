@@ -4,8 +4,8 @@ square=int(input("Enter Side of the square --> "))
 for i in range(0,square):
     print(" _",end="")
 print("")
-x=randint(0,square)
-y=randint(0,square)
+x=randint(0,square-1)
+y=randint(0,square-1)
 for i in range(0,square):
     for j in range(0,square+1):
         print("|",end="")
