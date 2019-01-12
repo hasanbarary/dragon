@@ -12,7 +12,9 @@ def show():
             elif not j == square:
                 print("_",end="")
         print("")
-    print(x+1,y+1)
+#    print(x+1,y+1)
+#    print(dragonx+1,dragony+1)
+#    print(doorx+1,doory+1)
 def up():
     if y != 0:
         return y-1
@@ -37,21 +39,31 @@ def left():
     else:
         print ("Where are you going !!? Your LEFT is the wall !")
         return x
-
-
+def rand():
+       return  randint(0,square-1)
 square=int(input("Enter Side of the square --> "))
-x=randint(0,square-1)
-y=randint(0,square-1)
+dragonx=rand()
+dragony=rand()
+doorx=rand()
+doory=rand()
+x=rand()
+y=rand()
 while True:
     show()
-    answer=input("Enter your jahat --> ")
-    if answer == 'u':
+    if x==dragonx and y==dragony:
+        print("Game Over,Try again")
+        break
+    if x==doorx and y==doory:
+        print("congratulation,You are Best")
+        break   
+    answer=input("Enter your direction --> ").lower()
+    if answer == 'u' or answer == 'up':
         y=up()
-    elif answer == 'd':
+    elif answer == 'd' or answer == 'down':
         y=down()
-    elif answer == 'r':
+    elif answer == 'r' or answer == 'right':
         x=right()
-    elif answer == 'l':
+    elif answer == 'l' or answer == 'left':
         x=left()
     else:
         break
