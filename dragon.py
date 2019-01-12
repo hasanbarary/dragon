@@ -1,5 +1,6 @@
 #!/usr/bin/python3.6
 from random import randint
+import os
 def show():
     for i in range(0,square):
         print(" _",end="")
@@ -41,7 +42,7 @@ def left():
         return x
 def rand():
        return  randint(0,square-1)
-square=int(input("Enter Side of the square --> "))
+square=int(input("Enter Side of the square  >>> "))
 dragonx=rand()
 dragony=rand()
 doorx=rand()
@@ -49,14 +50,15 @@ doory=rand()
 x=rand()
 y=rand()
 while True:
+    os.system('clear')
     show()
     if x==dragonx and y==dragony:
         print("Game Over,Try again")
         break
     if x==doorx and y==doory:
-        print("congratulation,You are Best")
+        print("congratulation,You are the Best")
         break   
-    answer=input("Enter your direction --> ").lower()
+    answer=input("Enter your direction \n'r' for right \n'l' for left \n'u' for up \n'd' for down \n --> ").lower()
     if answer == 'u' or answer == 'up':
         y=up()
     elif answer == 'd' or answer == 'down':
